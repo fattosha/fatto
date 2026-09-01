@@ -41,12 +41,19 @@ function type() {
     typingText.innerHTML += text[line][char];
     char++;
     setTimeout(type, 55);
-  } else {
-    typingText.innerHTML += "<br>";
-    line++;
-    char = 0;
-    setTimeout(type, 250);
-  }
+  } else if (line < text.length - 1) {
+
+        typingText.innerHTML += "<br>";
+
+        line++;
+        char = 0;
+
+        setTimeout(type, 250);
+
+    } else {
+
+        return;
+    }
 }
 
 type();
