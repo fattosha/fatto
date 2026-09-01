@@ -1776,7 +1776,7 @@ body {
 
 .journey-item:hover {
     transform: translateY(-5px);
-}@media (max-width: 900px) {
+}@media (min-width: 900px) {
     .journey {
         min-height:70vh;
     }
