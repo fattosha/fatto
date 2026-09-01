@@ -1060,19 +1060,19 @@ body {
         justify-content: center;
         gap: 25px;
     }
+    
     .skills-section .skills-art {
-        width: 100%;
-        height: 200px;
-        margin-top: 20px;
-        justify-content: center;
+        height: 300px;
+        margin-top: 0;
+        overflow: visible;
     }
+
     .skills-section .skills-art img {
-        width: 90%;
-        transform: none;
-        animation: skillsFloatMobile 5s ease-in-out infinite;
+        width: 100%;
+        height: auto;
+        transform: translateY(-100px);
     }
 }
-
 @keyframes skillsFloatMobile {
     0% {
         transform: translateY(4px);
