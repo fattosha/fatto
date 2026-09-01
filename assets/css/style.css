@@ -2859,7 +2859,7 @@ html {
     }
 }@media (min-width: 501px) and (max-width: 900px) {
     .journey {
-        min-height: auto;
+        min-height: 50vh !important;
         padding-bottom: 40px;
     }
 
