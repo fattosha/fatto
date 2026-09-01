@@ -1776,8 +1776,11 @@ body {
 
 .journey-item:hover {
     transform: translateY(-5px);
+}@media (max-width: 900px) {
+    .journey {
+        min-height:70vh;
+    }
 }
-
 @media (max-width: 900px) {
     .journey {
         padding: 100px 6vw 60px;
