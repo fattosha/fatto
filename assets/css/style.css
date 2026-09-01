@@ -1577,7 +1577,7 @@ html {
 
 .journey {
     position: relative;
-    min-height: 100vh;
+    min-height: 70vh;
     padding: 150px 7vw 70px;
     background: #0b0909;
     color: #eee5d2;
