@@ -2857,4 +2857,13 @@ html {
         top: 0;
         transform-origin: top center;
     }
+}@media (min-width: 501px) and (max-width: 900px) {
+    .journey {
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    .journey-bottom {
+        margin-top: 45px;
+    }
 }
