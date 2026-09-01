@@ -1061,16 +1061,18 @@ body {
         gap: 25px;
     }
     
-    .skills-section .skills-art {
-        height: 300px;
-        margin-top: 0;
+.skills-section .skills-art {
+        height: 420px;
+        margin-top: 10px;
         overflow: visible;
+        justify-content: center;
     }
 
     .skills-section .skills-art img {
-        width: 100%;
+        width: 75%;
         height: auto;
-        transform: translateY(-100px);
+        transform: translateY(40px);
+        animation: none;
     }
 }
 @keyframes skillsFloatMobile {
