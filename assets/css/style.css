@@ -1476,7 +1476,18 @@ body {
         height: 8px;
     }
 }
+@media (max-width: 700px) {
+    .certificate-card {
+        flex-direction: column;
+    }
 
+    .certificate-card p {
+        margin: 3px 0 0 !important;
+        font-size: 8px !important;
+        line-height: 1.2;
+        text-align: center;
+    }
+}
 
 /* journey start */
 
