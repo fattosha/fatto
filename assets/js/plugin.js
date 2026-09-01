@@ -1,3 +1,8 @@
+
+if (window.location.search) {
+    const cleanURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    window.history.replaceState({ path: cleanURL }, '', cleanURL);
+}
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 const navLinks = document.querySelectorAll(".nav-links a");
