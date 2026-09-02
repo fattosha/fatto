@@ -1337,7 +1337,7 @@ body {
     .mobile-separator img {
         width: auto;
         height: 400px;
-        max-width: 90%;
+        max-width: 70%;
         filter:
             drop-shadow(0 0 10px rgba(169, 8, 11, 0.6))
             drop-shadow(0 0 25px rgba(169, 8, 11, 0.4))
