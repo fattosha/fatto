@@ -3,67 +3,59 @@ Fattosh — Personal Portfolio
 <p align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,bootstrap,git,github,vscode,vercel" />
 </p><p align="center">
-  <b>My personal portfolio — built from scratch.</b>
-</p>---
+  <i>Built from scratch — one section, one problem, one fix at a time.</i>
+</p><hr>About
 
-✦ About
+My personal portfolio where I showcase my projects, skills, certificates, and my journey as a Front-End Developer.
 
-This is my personal portfolio where I showcase my projects, skills, certificates, and my journey as a Front-End Developer.
+I didn't want to use a ready-made portfolio template. I wanted to build something that feels like me, so I started from a blank page and built it step by step.
 
-I wanted to build something that feels personal and different from a regular portfolio template, so I designed and developed it from scratch.
+<hr>How I Built It
 
-✦ How I Built It
+I started with the structure first, then gradually turned it into the final design.
 
-I started with a blank page and built everything step by step:
+- Built the page structure with HTML
+- Designed the interface with CSS & Bootstrap
+- Added interactions using JavaScript
+- Used AOS for scroll animations
+- Tested different screen sizes and fixed responsive issues
+- Organized the project files and deployed it with Vercel
 
-- Planned the sections and layout.
-- Built the structure with HTML.
-- Designed the interface using CSS & Bootstrap.
-- Added interactions with JavaScript.
-- Added smooth scroll animations using AOS.
-- Tested the website on different screen sizes and fixed responsive issues.
-- Organized the project and deployed it using Vercel.
+<hr>Challenges
 
-✦ Challenges
+Building it from scratch came with a few problems.
 
-The hardest parts were not writing the code itself, but making everything work together.
+Responsive Design
+Some layouts looked great on desktop but broke on smaller screens, so I had to rethink widths, spacing, and positioning.
 
-I faced issues with:
+Animations
+I wanted the website to feel alive without making it distracting, so I had to adjust animations and timing until they felt natural.
 
-- Responsive layouts on mobile.
-- Positioning images and decorative elements.
-- Keeping all sections visually consistent.
-- Making animations smooth without overdoing them.
-- Fixing layout problems that appeared at different screen sizes.
+Consistency
+Each section has a different layout, but they still needed to feel like parts of the same website.
 
-I solved most of them through testing, debugging, and trying different approaches.
+Most of the solutions came from testing, debugging, breaking things, and trying again.
 
-✦ What I Learned
+<hr>What I Learned
 
-Building this project helped me get better at:
+This project improved my understanding of:
 
-- Responsive Design
-- CSS Layouts
-- JavaScript & DOM
-- UI Design
+- Responsive Web Design
+- CSS layouts & positioning
+- JavaScript DOM manipulation
+- UI consistency
 - Debugging
 - Git & GitHub
 - Deployment
 
-✦ Tech Stack
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=html,css,js,bootstrap,git,github,vscode,vercel" />
-</p>Libraries: AOS · Font Awesome
-
-✦ Live
-
-🌐 Portfolio: https://fattosh.vercel.app/
-
----
+<hr>Live Demo
 
 <p align="center">
-  <b>Built from scratch by Fattosh</b>
-  <br><br>
+  <a href="https://fattosh.vercel.app/">
+    <img src="https://img.shields.io/badge/View%20Live%20Portfolio-000?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+</p><hr><p align="center">
   <i>Bad start isn't a bad finish.</i>
+  <br>
+  <b>— Fattosh</b>
 </p>
