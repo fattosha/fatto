@@ -319,60 +319,81 @@ if (whatsappLink) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".nav-links a");
-  const sections = document.querySelectorAll("section[id]");
-
-  function updateActiveNav() {
-    const scrollPosition = window.scrollY + 120;
-    let currentSection = "";
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-
-      if (
-        scrollPosition >= sectionTop &&
-        scrollPosition < sectionTop + sectionHeight
-      ) {
-        currentSection = section.id;
-      }
-    });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-
-      const linkTarget = link.getAttribute("href");
-
-      if (linkTarget === "#" + currentSection) {
-        link.classList.add("active");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", updateActiveNav);
-  updateActiveNav();
-});
-document.addEventListener("DOMContentLoaded", () => {
   const services = document.querySelectorAll(".service");
 
   services.forEach((service) => {
     service.addEventListener("click", () => {
 
-      
       if (service.classList.contains("active")) {
         service.classList.remove("active");
         document.body.classList.remove("service-open");
+
+        const placeholder = service._placeholder;
+
+        if (placeholder) {
+          const parent = placeholder.parentNode;
+          parent.insertBefore(service, placeholder);
+          placeholder.remove();
+          service._placeholder = null;
+        }
+
+        service.style.position = "";
+        service.style.left = "";
+        service.style.top = "";
+        service.style.width = "";
+        service.style.height = "";
+        service.style.zIndex = "";
+
         return;
       }
 
-     
       services.forEach((item) => {
-        item.classList.remove("active");
+        if (item !== service) {
+          item.classList.remove("active");
+
+          if (item._placeholder) {
+            item._placeholder.parentNode.insertBefore(
+              item,
+              item._placeholder
+            );
+
+            item._placeholder.remove();
+            item._placeholder = null;
+          }
+
+          item.style.position = "";
+          item.style.left = "";
+          item.style.top = "";
+          item.style.width = "";
+          item.style.height = "";
+          item.style.zIndex = "";
+        }
       });
 
-      
-      service.classList.add("active");
+      const rect = service.getBoundingClientRect();
+
+      const placeholder = document.createElement("div");
+
+      placeholder.style.width = `${rect.width}px`;
+      placeholder.style.height = `${rect.height}px`;
+
+      service.parentNode.insertBefore(placeholder, service);
+      service._placeholder = placeholder;
+
+      service.style.position = "fixed";
+      service.style.left = `${rect.left}px`;
+      service.style.top = `${rect.top}px`;
+      service.style.width = `${rect.width}px`;
+      service.style.height = `${rect.height}px`;
+      service.style.zIndex = "10001";
+
+      document.body.appendChild(service);
+
       document.body.classList.add("service-open");
+
+      requestAnimationFrame(() => {
+        service.classList.add("active");
+      });
     });
   });
 });
