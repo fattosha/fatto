@@ -1953,6 +1953,217 @@ body {
 
 
 /* end of journey */
+/*what can i do start*/
+.what-can {
+  position: relative;
+  overflow: hidden;
+  background: #8d0004;
+  color: #f6e9d8;
+  padding: 110px 6%;
+}
+
+.what-can-content {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.what-can-man {
+  position: absolute;
+  width: 390px;
+  left: -30px;
+  bottom: 0;
+  z-index: 1;
+}
+
+.what-can-title {
+  margin-left: 22%;
+  margin-bottom: 55px;
+}
+
+.what-can-title span {
+  font-size: 12px;
+  letter-spacing: 4px;
+  opacity: .7;
+}
+
+.what-can-title h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(50px, 7vw, 95px);
+  font-weight: 400;
+  line-height: .95;
+  margin: 20px 0;
+}
+
+.what-can-title h2 em {
+  font-style: italic;
+}
+
+.what-can-title p {
+  font-size: 17px;
+  opacity: .75;
+}
+
+.services {
+  margin-left: 22%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.service {
+  position: relative;
+  min-height: 270px;
+  padding: 32px;
+  border: 1px solid rgba(246, 233, 216, .4);
+  margin: -1px 0 0 -1px;
+  transition: .3s;
+}
+
+.service:hover {
+  background: rgba(0, 0, 0, .12);
+}
+
+.service-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.service-head span {
+  font-family: Georgia, serif;
+  font-size: 40px;
+}
+
+.service-head b {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.service h3 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.service p {
+  max-width: 390px;
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: .75;
+}
+
+.service a {
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+  color: inherit;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.what-can-bottom {
+  margin-left: 22%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding-top: 60px;
+  font-size: 11px;
+  letter-spacing: 5px;
+}
+
+.what-can-bottom i {
+  width: 30px;
+  height: 1px;
+  background: #f6e9d8;
+  opacity: .6;
+}
+
+@media (max-width: 900px) {
+  .what-can {
+    padding: 80px 5%;
+  }
+
+  .what-can-man {
+    width: 280px;
+    left: -90px;
+    opacity: .7;
+  }
+
+  .what-can-title,
+  .services,
+  .what-can-bottom {
+    margin-left: 14%;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .what-can {
+    padding: 70px 20px;
+  }
+
+  .what-can-man {
+    width: 230px;
+    left: -100px;
+    opacity: .4;
+  }
+
+  .what-can-title {
+    margin-left: 0;
+  }
+
+  .what-can-title span {
+    font-size: 10px;
+  }
+
+  .what-can-title h2 {
+    font-size: 48px;
+  }
+
+  .what-can-title p {
+    font-size: 15px;
+  }
+
+  .services {
+    margin-left: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .service {
+    min-height: 220px;
+    padding: 25px;
+  }
+
+  .service-head span {
+    font-size: 34px;
+  }
+
+  .service h3 {
+    font-size: 26px;
+  }
+
+  .service p {
+    font-size: 13px;
+    max-width: 85%;
+  }
+
+  .what-can-bottom {
+    margin-left: 0;
+    padding-top: 45px;
+    gap: 8px;
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+}
+/*end wt can i do*/
 
 
 /* start of contact */
