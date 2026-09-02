@@ -2271,7 +2271,7 @@ body.service-open::before {
 .service.active p,
 .service.active span,
 .service.active b {
-  color: inherit !important;
+  color: white !important;
 }
 /*end wt can i do*/
 
