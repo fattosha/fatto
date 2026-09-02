@@ -195,7 +195,7 @@ body {
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 800px) {
     .menu-btn {
         display: none;
     }
