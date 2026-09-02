@@ -2219,7 +2219,7 @@ body {
     letter-spacing: 3px;
   }
 }
-body.service-open::before {
+
 /* Dark + Blur Overlay */
 body.service-open::before {
   content: "";
