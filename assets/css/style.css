@@ -1100,7 +1100,7 @@ body {
     grid-template-columns: 38% 62%;
     align-items: center;
     gap: 20px;
-    padding: 70px 5%;
+    padding: 0px 5%;
     box-sizing: border-box;
     overflow: hidden;
     background-color: #0d0d0d;
@@ -1108,6 +1108,7 @@ body {
 
 .project-info {
     padding-left: 20px;
+    padding-right: 20px;
     position: relative;
     z-index: 2;
 }
