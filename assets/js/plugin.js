@@ -6,28 +6,37 @@ if (window.location.search) {
 const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 const navLinks = document.querySelectorAll(".nav-links a");
-const navbar = document.querySelector(".navbar");
-
-menuBtn.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-});
+const sections = document.querySelectorAll("section[id]");
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("open");
-    navLinks.forEach((item) => item.classList.remove("active"));
-    link.classList.add("active");
   });
 });
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 40) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
-});
+  let current = "";
 
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.offsetHeight;
+
+    if (
+      window.scrollY >= sectionTop &&
+      window.scrollY < sectionTop + sectionHeight
+    ) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
 const text = [
   "Menna Khalid",
   "Nickname: Fattosh",
