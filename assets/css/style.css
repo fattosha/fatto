@@ -1354,6 +1354,18 @@ body {
         padding-left: 70px;
     }
 }
+
+.mobile-separator::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: red;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+
 /* project end */
 
 
