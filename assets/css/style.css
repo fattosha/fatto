@@ -1262,7 +1262,15 @@ height:120%;
             rgba(169, 8, 11, 0.35) 0%,
             rgba(169, 8, 11, 0.15) 35%,
             transparent 70%
-        );
+        );}
+    .featured-project {
+        gap: 45px;
+    }
+
+    .featured-project > .mobile-separator {
+        margin-top: -45px;
+        margin-bottom: -45px;
+    
     }
 
     .mobile-separator img {
