@@ -2220,7 +2220,7 @@ body {
   }
 }
 
-/* OVERLAY */
+
 body.service-open::before {
   content: "";
   position: fixed;
@@ -2236,7 +2236,6 @@ body.service-open::before {
 }
 
 
-/* NORMAL SERVICE CARDS */
 .service {
   position: relative;
   z-index: 1;
@@ -2248,7 +2247,7 @@ body.service-open::before {
 }
 
 
-/* ACTIVE CARD */
+
 .service.active {
   position: fixed;
 
@@ -2266,6 +2265,13 @@ body.service-open::before {
   filter: none !important;
 
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+.service.active,
+.service.active h3,
+.service.active p,
+.service.active span,
+.service.active b {
+  color: inherit !important;
 }
 /*end wt can i do*/
 
