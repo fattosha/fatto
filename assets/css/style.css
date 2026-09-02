@@ -1241,6 +1241,11 @@ body {
     border-radius: 0 0 10px 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, .4);
 }
+.mobile-separator {
+    display: none;
+}
+
+
 
 @media (max-width: 950px) {
     .featured-project {
@@ -1296,6 +1301,18 @@ body {
     }
     .project-preview:hover .laptop {
         transform: translateY(-5px);
+    }    .mobile-separator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .mobile-separator img {
+        max-width: 150px;
+        height: auto;
+        opacity: 0.8;
     }
 }
 @media (min-width: 771px) {
