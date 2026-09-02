@@ -1298,16 +1298,15 @@ body {
         transform: translateY(-5px);
     }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
-    .featured-project .project-info:nth-of-type(2) {
-        padding-left: 50px;
+@media (min-width: 771px) {
+    .featured-project > .project-preview:nth-child(3) {
+        padding-right: 50px;
     }
 
-    .featured-project .project-preview:nth-of-type(2) .laptop {
-        transform: translateX(-20px);
+    .featured-project > .project-info:nth-child(4) {
+        padding-left: 70px;
     }
 }
-
 /* project end */
 
 
