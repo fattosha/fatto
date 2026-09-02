@@ -2271,7 +2271,8 @@ body.service-open::before {
 .service.active p,
 .service.active span,
 .service.active b {
-  color: white !important;
+  color: var(--cream)!important;
+    background:var(--red-dark)!important;
 }
 /*end wt can i do*/
 
