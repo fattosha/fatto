@@ -1246,7 +1246,7 @@ body {
     display: none;
 }
 
-/* Show rope only on mobile */
+
 @media (max-width: 768px) {
     .mobile-separator {
         display: flex;
@@ -1266,7 +1266,7 @@ body {
 
     .mobile-separator img {
         width: auto;
-        height: 300px;
+        height: 400px;
         max-width: 90%;
 
         filter:
