@@ -1244,7 +1244,39 @@ body {
 .mobile-separator {
     display: none;
 }
+.mobile-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 35px 0;
+    position: relative;
+    background: transparent;
+}
 
+.mobile-separator::before {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(169, 8, 11, 0.18);
+    filter: blur(60px);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.mobile-separator img {
+    max-height: 160px;
+    width: auto;
+    position: relative;
+    z-index: 1;
+    filter:
+        brightness(1.15)
+        contrast(1.08)
+        drop-shadow(0 0 18px rgba(169, 8, 11, 0.8))
+        drop-shadow(0 0 40px rgba(169, 8, 11, 0.4));
+    transition: filter 0.3s ease;
+}
 
 
 @media (max-width: 950px) {
