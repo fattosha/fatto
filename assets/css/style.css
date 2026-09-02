@@ -2220,7 +2220,7 @@ body {
   }
 }
 
-/* Dark + Blur Overlay */
+/* OVERLAY */
 body.service-open::before {
   content: "";
   position: fixed;
@@ -2231,11 +2231,12 @@ body.service-open::before {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 
-  z-index: 999;
+  z-index: 9999;
   pointer-events: none;
 }
 
-/* Normal Cards */
+
+/* NORMAL SERVICE CARDS */
 .service {
   position: relative;
   z-index: 1;
@@ -2246,7 +2247,8 @@ body.service-open::before {
     box-shadow 0.6s ease;
 }
 
-/* Open Card */
+
+/* ACTIVE CARD */
 .service.active {
   position: fixed;
 
@@ -2258,13 +2260,12 @@ body.service-open::before {
 
   transform: translate(-50%, -50%) scale(1.05);
 
-  z-index: 1001;
+  z-index: 10000 !important;
 
   opacity: 1;
-  filter: none;
+  filter: none !important;
 
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
 }
 /*end wt can i do*/
 
