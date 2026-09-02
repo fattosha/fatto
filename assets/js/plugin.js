@@ -379,6 +379,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
       service.parentNode.insertBefore(placeholder, service);
       service._placeholder = placeholder;
+        service.style.position = "fixed";
+service.style.left = "50%";
+service.style.top = "50%";
+service.style.width = "min(500px, 85vw)";
+service.style.height = "";
+service.style.zIndex = "10001";
+
+document.body.appendChild(service);
+
+document.body.classList.add("service-open");
+
+requestAnimationFrame(() => {
+  service.classList.add("active");
+});
 
       service.style.position = "fixed";
       service.style.left = `${rect.left}px`;
