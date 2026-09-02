@@ -7,6 +7,9 @@ const menuBtn = document.getElementById("menuBtn");
 const navMenu = document.getElementById("navMenu");
 const navLinks = document.querySelectorAll(".nav-links a");
 const sections = document.querySelectorAll("section[id]");
+menuBtn.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
