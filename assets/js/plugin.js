@@ -352,3 +352,27 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", updateActiveNav);
   updateActiveNav();
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const services = document.querySelectorAll(".service");
+
+  services.forEach((service) => {
+    service.addEventListener("click", () => {
+
+      
+      if (service.classList.contains("active")) {
+        service.classList.remove("active");
+        document.body.classList.remove("service-open");
+        return;
+      }
+
+     
+      services.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      
+      service.classList.add("active");
+      document.body.classList.add("service-open");
+    });
+  });
+});
