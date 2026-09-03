@@ -1345,11 +1345,7 @@ body {
         height: 380px;
         max-width: 75%;
 
-        filter:
-            drop-shadow(0 0 8px rgba(169, 8, 11, 0.7))
-            drop-shadow(0 0 22px rgba(169, 8, 11, 0.45))
-            drop-shadow(0 0 45px rgba(169, 8, 11, 0.2));
-
+        
         transition: transform 0.4s ease;
     }
 
