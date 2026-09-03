@@ -462,3 +462,7 @@ document.getElementById("lang-ar").addEventListener("click", () => {
 
     setLanguage("ar");
 });
+const customTranslations = {
+    "Nickname:": "الاسم المستعار:",
+    "CIS": "الحاسبات و المعلومات",
+}
