@@ -436,3 +436,20 @@ langAr.addEventListener("click", () => {
     setLanguage("ar");
 });
 
+function setLanguage(lang) {
+    const select = document.querySelector(".goog-te-combo");
+
+    if (!select) {
+        setTimeout(() => setLanguage(lang), 300);
+        return;
+    }
+
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+    langEn.classList.toggle("active", lang === "en");
+    langAr.classList.toggle("active", lang === "ar");
+}
