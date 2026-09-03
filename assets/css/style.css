@@ -3251,6 +3251,7 @@ html {
 html[dir="rtl"] .project-info {
     text-align: right;
 }
-html[dir="rtl"] .lamp {
+html[dir="rtl"] .hero-lamp
+{
     left: 20%;
 }
