@@ -577,6 +577,24 @@ body {
     .lamp-glow {
         top: 205px;
     }
+    html[dir="rtl"] .hero-lamp
+{
+    left: 12%;
+}
+html[dir="rtl"] .lamp-cord {
+    height: 230px;
+}
+    html[dir="rtl"] .lamp-cord {
+    height: 230px;
+}
+
+html[dir="rtl"] .lamp-shade {
+    top: 230px;
+}
+
+html[dir="rtl"] .lamp-glow {
+    top: 273px;
+}
 }
 
 @media (min-width: 767px) and (max-width: 991px) {
@@ -1613,7 +1631,27 @@ body {
         text-align: center;
     }
 }
+html[dir="rtl"] #certificates {
+    direction: ltr !important;
+    text-align: left !important;
+}
 
+html[dir="rtl"] #certificates * {
+    direction: ltr !important;
+}
+
+html[dir="rtl"] #certificates .container,
+html[dir="rtl"] #certificates .certificates-container {
+    direction: ltr !important;
+}
+
+html[dir="rtl"] #certificates h2,
+html[dir="rtl"] #certificates h3,
+html[dir="rtl"] #certificates p,
+html[dir="rtl"] #certificates span,
+html[dir="rtl"] #certificates a {
+    text-align: left !important;
+}
 /* journey start */
 
 .journey {
@@ -3270,27 +3308,6 @@ html[dir="rtl"] .project-info {
     text-align: right;
 }
 
-
-@media (max-width: 766px) {
-    html[dir="rtl"] .hero-lamp
-{
-    left: 12%;
-}
-html[dir="rtl"] .lamp-cord {
-    height: 230px;
-}
-    html[dir="rtl"] .lamp-cord {
-    height: 230px;
-}
-
-html[dir="rtl"] .lamp-shade {
-    top: 230px;
-}
-
-html[dir="rtl"] .lamp-glow {
-    top: 273px;
-}
-}
 .goog-te-banner-frame, 
 .goog-te-gadget-icon,
 #google_translate_element,
