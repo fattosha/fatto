@@ -3244,4 +3244,10 @@ html {
     display: none !important;
 }.language-switcher {
     translate: no;
+}html[dir="rtl"] .nav-links {
+    direction: rtl;
+}
+
+html[dir="rtl"] .project-info {
+    text-align: right;
 }
