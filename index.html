@@ -360,9 +360,152 @@
             </div>
 
         </div>
-        <div class="mobile-separator">
-    <img src="assets/images/ropee.png" alt="Rope">
-        </div>
+        
+    <div class="mobile-separator">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 400 600"
+        aria-hidden="true"
+    >
+        <defs>
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="5" result="blur"/>
+                <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+
+            <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="45%" stop-color="#bdbdbd"/>
+                <stop offset="100%" stop-color="#555"/>
+            </linearGradient>
+
+            <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#292929"/>
+                <stop offset="50%" stop-color="#111"/>
+                <stop offset="100%" stop-color="#050505"/>
+            </linearGradient>
+        </defs>
+
+        <!-- Top cable -->
+        <path
+            d="M200 0
+               C200 55 165 70 180 110
+               C195 150 235 145 230 185"
+            fill="none"
+            stroke="#111"
+            stroke-width="18"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M200 0
+               C200 55 165 70 180 110
+               C195 150 235 145 230 185"
+            fill="none"
+            stroke="#292929"
+            stroke-width="10"
+            stroke-linecap="round"
+        />
+
+        <!-- Socket -->
+        <g filter="url(#glow)">
+            <rect
+                x="105"
+                y="170"
+                width="190"
+                height="145"
+                rx="28"
+                fill="url(#body)"
+                stroke="#444"
+                stroke-width="3"
+            />
+
+            <!-- socket slots -->
+            <rect
+                x="145"
+                y="215"
+                width="25"
+                height="60"
+                rx="12"
+                fill="#050505"
+            />
+
+            <rect
+                x="230"
+                y="215"
+                width="25"
+                height="60"
+                rx="12"
+                fill="#050505"
+            />
+
+            <circle cx="157" cy="245" r="5" fill="#a9080b"/>
+            <circle cx="243" cy="245" r="5" fill="#a9080b"/>
+        </g>
+
+        <!-- Plug -->
+        <g filter="url(#glow)">
+            <rect
+                x="135"
+                y="350"
+                width="130"
+                height="105"
+                rx="25"
+                fill="url(#body)"
+                stroke="#444"
+                stroke-width="3"
+            />
+
+            <!-- pins -->
+            <rect
+                x="155"
+                y="320"
+                width="22"
+                height="65"
+                rx="8"
+                fill="url(#metal)"
+            />
+
+            <rect
+                x="223"
+                y="320"
+                width="22"
+                height="65"
+                rx="8"
+                fill="url(#metal)"
+            />
+
+            <!-- plug detail -->
+            <circle cx="170" cy="405" r="6" fill="#a9080b"/>
+            <circle cx="230" cy="405" r="6" fill="#a9080b"/>
+        </g>
+
+        <!-- Bottom cable -->
+        <path
+            d="M200 455
+               C200 500 150 510 175 545
+               C195 570 230 555 225 600"
+            fill="none"
+            stroke="#111"
+            stroke-width="18"
+            stroke-linecap="round"
+        />
+
+        <path
+            d="M200 455
+               C200 500 150 510 175 545
+               C195 570 230 555 225 600"
+            fill="none"
+            stroke="#292929"
+            stroke-width="10"
+            stroke-linecap="round"
+        />
+    </svg>
+    </div>
+        
         <!-- LEFT CONTENT -->
         <div class="project-preview" data-aos="fade-left">
 
