@@ -659,7 +659,14 @@ html[dir="rtl"] .lamp-glow {
         background-position: center bottom;
     }
 }
-
+@media (min-width: 767px){
+    html[dir="rtl"] .hero-info {
+        direction: ltr !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+}
 
 /* HERO END */
 
