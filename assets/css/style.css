@@ -3146,3 +3146,80 @@ body.service-open::before {
 
 
 /* end of contact footer */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.language-switcher button {
+    border: none;
+    background: transparent;
+    color: #8b2f2f;
+    font: inherit;
+    cursor: pointer;
+    padding: 4px;
+    transition: 0.3s ease;
+}
+
+.language-switcher button.active {
+    color: #b33a3a;
+}
+
+.language-switcher button:hover {
+    color: #c94a4a;
+}
+
+.language-switcher span {
+    color: #5c2020;
+}
+
+#google_translate_element {
+    display: none !important;
+}
+
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+html {
+    margin-top: 0 !important;
+}
+
+body > .skiptranslate {
+    display: none !important;
+}
+
+body > .skiptranslate iframe {
+    display: none !important;
+}
+
+.goog-te-gadget {
+    display: none !important;
+}
+
+.goog-tooltip,
+.goog-te-balloon-frame {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 700px) {
+    .language-switcher {
+        font-size: 11px;
+        gap: 5px;
+    }
+}
