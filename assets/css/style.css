@@ -3261,6 +3261,7 @@ html[dir="rtl"] .lamp-cord {
 
 @media (max-width: 766px) {
     html[dir="rtl"] .lamp-cord {
-        height: 350px;
+    top: -168px;
+    height: 260px;
     }
 }
