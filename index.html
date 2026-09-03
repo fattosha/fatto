@@ -403,21 +403,18 @@
         </feMerge>
       </filter>
 
-      <filter id="softGlow">
-        <feGaussianBlur stdDeviation="18"/>
-      </filter>
-
+      
     </defs>
 
-    <ellipse
-      cx="200"
-      cy="350"
-      rx="150"
-      ry="290"
-      fill="#a9080b"
-      opacity=".22"
-      filter="url(#softGlow)"
-    />
+    <filter id="redGlow" x="-30%" y="-30%" width="160%" height="160%">
+  <feGaussianBlur stdDeviation="5" result="blur"/>
+  <feFlood flood-color="#a9080b" flood-opacity=".75"/>
+  <feComposite in2="blur" operator="in"/>
+  <feMerge>
+    <feMergeNode/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+    </filter>
 
     <path
       d="M200 0 C200 55 170 80 174 125 C178 170 225 178 225 215"
