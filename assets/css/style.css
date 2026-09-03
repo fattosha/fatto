@@ -660,7 +660,7 @@ html[dir="rtl"] .lamp-glow {
     }
 }
 @media (min-width: 767px){
-    html[dir="rtl"] .hero-info {
+    html[dir="rtl"] .hero-content {
         direction: ltr !important;
         text-align: left !important;
         margin-left: 0 !important;
