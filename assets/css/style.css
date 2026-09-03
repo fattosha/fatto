@@ -3291,3 +3291,14 @@ html[dir="rtl"] .lamp-glow {
     top: 273px;
 }
 }
+.goog-te-banner-frame, 
+.goog-te-gadget-icon,
+#google_translate_element,
+.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
