@@ -3255,3 +3255,6 @@ html[dir="rtl"] .hero-lamp
 {
     left: 20%;
 }
+html[dir="rtl"] .lamp-cord {
+    height: 210px;
+}
