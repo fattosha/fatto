@@ -1355,11 +1355,11 @@ body {
 }
 
 @media (min-width: 701px) {
-    .featured-project > .project-preview:nth-child(4) {
+    .featured-project > .project-preview:nth-child(4) ,.featured-project > .project-preview:nth-child(10) {
         padding-right: 50px;
     }
 
-    .featured-project > .project-info:nth-child(5) {
+    .featured-project > .project-info:nth-child(5),.featured-project > .project-info:nth-child(11) {
         padding-left: 70px;
     }
 }
