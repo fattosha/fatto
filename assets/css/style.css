@@ -3242,4 +3242,6 @@ html {
 .goog-te-balloon-frame,
 .goog-text-highlight {
     display: none !important;
+}.language-switcher {
+    translate: no;
 }
