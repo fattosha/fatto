@@ -3251,17 +3251,25 @@ html {
 html[dir="rtl"] .project-info {
     text-align: right;
 }
-html[dir="rtl"] .hero-lamp
+
+
+@media (max-width: 766px) {
+    html[dir="rtl"] .hero-lamp
 {
     left: 20%;
 }
 html[dir="rtl"] .lamp-cord {
     height: 210px;
 }
-
-@media (max-width: 766px) {
     html[dir="rtl"] .lamp-cord {
-    top: -168px;
-    height: 260px;
-    }
+    height: 210px;
+}
+
+html[dir="rtl"] .lamp-shade {
+    top: 210px;
+}
+
+html[dir="rtl"] .lamp-glow {
+    top: 253px;
+}
 }
