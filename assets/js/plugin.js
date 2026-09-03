@@ -453,3 +453,12 @@ function setLanguage(lang) {
     langEn.classList.toggle("active", lang === "en");
     langAr.classList.toggle("active", lang === "ar");
 }
+document.getElementById("lang-ar").addEventListener("click", () => {
+    document.documentElement.lang = "ar";
+    document.documentElement.classList.remove("notranslate");
+
+    const meta = document.querySelector('meta[name="google"][content="notranslate"]');
+    if (meta) meta.remove();
+
+    setLanguage("ar");
+});
