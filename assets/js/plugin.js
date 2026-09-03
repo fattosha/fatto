@@ -436,10 +436,3 @@ langAr.addEventListener("click", () => {
     setLanguage("ar");
 });
 
-window.addEventListener("load", () => {
-    const savedLanguage = localStorage.getItem("language") || "en";
-
-    setTimeout(() => {
-        setLanguage(savedLanguage);
-    }, 1000);
-});
