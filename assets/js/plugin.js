@@ -408,3 +408,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+const langEn = document.getElementById("lang-en");
+const langAr = document.getElementById("lang-ar");
+
+function setLanguage(lang) {
+    const select = document.querySelector(".goog-te-combo");
+
+    if (!select) {
+        setTimeout(() => setLanguage(lang), 300);
+        return;
+    }
+
+    select.value = lang;
+    select.dispatchEvent(new Event("change"));
+
+    langEn.classList.toggle("active", lang === "en");
+    langAr.classList.toggle("active", lang === "ar");
+
+    localStorage.setItem("language", lang);
+}
+
+langEn.addEventListener("click", () => {
+    setLanguage("en");
+});
+
+langAr.addEventListener("click", () => {
+    setLanguage("ar");
+});
+
+window.addEventListener("load", () => {
+    const savedLanguage = localStorage.getItem("language") || "en";
+
+    setTimeout(() => {
+        setLanguage(savedLanguage);
+    }, 1000);
+});
