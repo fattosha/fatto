@@ -3256,7 +3256,7 @@ html[dir="rtl"] .project-info {
 @media (max-width: 766px) {
     html[dir="rtl"] .hero-lamp
 {
-    left: 20%;
+    left: 12%;
 }
 html[dir="rtl"] .lamp-cord {
     height: 210px;
