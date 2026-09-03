@@ -440,11 +440,11 @@ function setLanguage(lang) {
     const select = document.querySelector(".goog-te-combo");
 
     if (!select) {
-        setTimeout(() => setLanguage(lang), 300);
+        setTimeout(() => setLanguage(lang), 500);
         return;
     }
 
-    select.value = lang;
+    select.value = lang === "ar" ? "ar" : "en";
     select.dispatchEvent(new Event("change"));
 
     document.documentElement.lang = lang;
