@@ -3258,3 +3258,9 @@ html[dir="rtl"] .hero-lamp
 html[dir="rtl"] .lamp-cord {
     height: 210px;
 }
+
+@media (max-width: 766px) {
+    html[dir="rtl"] .lamp-cord {
+        height: 350px;
+    }
+}
