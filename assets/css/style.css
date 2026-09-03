@@ -3223,3 +3223,23 @@ body > .skiptranslate iframe {
         gap: 5px;
     }
 }
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+body > .skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+html {
+    margin-top: 0 !important;
+}
+
+.goog-te-gadget,
+.goog-tooltip,
+.goog-te-balloon-frame,
+.goog-text-highlight {
+    display: none !important;
+}
