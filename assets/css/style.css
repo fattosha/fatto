@@ -3242,7 +3242,25 @@ html {
 .goog-te-balloon-frame,
 .goog-text-highlight {
     display: none !important;
-}.language-switcher {
+}
+.goog-te-spinner-pos,
+.goog-te-spinner,
+.goog-te-menu-frame,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-te-banner-frame,
+.goog-te-ftab,
+#goog-gt-tt {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+.language-switcher {
     translate: no;
 }html[dir="rtl"] .nav-links {
     direction: rtl;
