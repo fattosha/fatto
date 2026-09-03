@@ -3251,3 +3251,6 @@ html {
 html[dir="rtl"] .project-info {
     text-align: right;
 }
+html[dir="rtl"] .lamp {
+    left: 20%;
+}
