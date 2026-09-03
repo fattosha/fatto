@@ -3259,17 +3259,17 @@ html[dir="rtl"] .project-info {
     left: 12%;
 }
 html[dir="rtl"] .lamp-cord {
-    height: 210px;
+    height: 230px;
 }
     html[dir="rtl"] .lamp-cord {
-    height: 210px;
+    height: 230px;
 }
 
 html[dir="rtl"] .lamp-shade {
-    top: 210px;
+    top: 230px;
 }
 
 html[dir="rtl"] .lamp-glow {
-    top: 253px;
+    top: 273px;
 }
 }
