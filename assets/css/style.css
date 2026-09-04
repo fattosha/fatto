@@ -1,10 +1,13 @@
-:root {
+:root {color-scheme: light;
     --red: #a90000;
     --cream: #F5E4D2;
     --black: #080808;
     --red-dark: #7f0508;
     --muted-cream: #D8C7B8;
     --txt: #fbc6a8;
+    
+    
+    
 }
 
 
