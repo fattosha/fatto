@@ -36,7 +36,10 @@ html {
     scrollbar-color: #e50914 #0b0b0b;
     scroll-behavior: smooth;
 }
-
+html,
+body {
+    color-scheme: light only;
+}
 
 /* scrollbar ending */
 .language-switcher {
