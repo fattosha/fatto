@@ -3513,29 +3513,50 @@ body {
         padding: 15px;
         box-sizing: border-box;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .certificate-card::before {
         content: "";
         position: absolute;
-        width: 420px;
-        height: 320px;
+        width: 400px;
+        height: 300px;
         max-width: calc(100% - 10px);
-        background:
-            linear-gradient(
-                135deg,
-                #3a1710 0%,
-                #6b3520 18%,
-                #32120d 38%,
-                #754127 55%,
-                #3b1810 78%,
-                #21100c 100%
-            );
-        border: 4px solid #24100b;
+        background: #f5e4d2;
+        clip-path: polygon(
+            4% 0,
+            96% 0,
+            100% 8%,
+            100% 92%,
+            96% 100%,
+            4% 100%,
+            0 92%,
+            0 8%
+        );
         box-shadow:
-            inset 0 0 0 3px #8a5535,
-            inset 0 0 0 7px #35150e,
-            0 5px 14px rgba(0, 0, 0, .45);
+            0 6px 16px rgba(0, 0, 0, .4);
+        z-index: 0;
+    }
+
+    .certificate-card::after {
+        content: "";
+        position: absolute;
+        width: calc(400px - 14px);
+        height: calc(300px - 14px);
+        max-width: calc(100% - 24px);
+        background: #d8c7b8;
+        clip-path: polygon(
+            4% 0,
+            96% 0,
+            100% 8%,
+            100% 92%,
+            96% 100%,
+            4% 100%,
+            0 92%,
+            0 8%
+        );
         z-index: 0;
     }
 
@@ -3544,13 +3565,34 @@ body {
         z-index: 1;
         width: 400px;
         height: 300px;
-        max-width: calc(100% - 20px);
-        padding: 0;
+        max-width: calc(100% - 24px);
+        padding: 5px;
         box-sizing: border-box;
         object-fit: contain;
         object-position: center;
-        border: none;
-        box-shadow: none;
+
+        border: 4px solid #b99b82;
+
+        clip-path: polygon(
+            4% 0,
+            96% 0,
+            100% 8%,
+            100% 92%,
+            96% 100%,
+            4% 100%,
+            0 92%,
+            0 8%
+        );
+
+        box-shadow:
+            inset 0 0 0 2px #f5e4d2,
+            0 3px 10px rgba(0, 0, 0, .25);
+
+        transition: transform .5s ease, filter .5s ease;
+    }
+
+    .certificate-card:hover img {
+        transform: scale(1.015);
     }
 
     .certificate-badge {
