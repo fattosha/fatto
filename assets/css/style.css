@@ -1626,7 +1626,7 @@ html[dir="rtl"] .lamp-glow {
 }
 
 .certificate-card img {
-    width: 100%;
+    width: 190px;
     height: 320px;
     display: block;
     object-fit: contain;
@@ -1671,7 +1671,7 @@ html[dir="rtl"] .lamp-glow {
 }
 
 
-/* tablet */
+
 
 @media (max-width: 950px) {
 
@@ -1693,7 +1693,7 @@ html[dir="rtl"] .lamp-glow {
 }
 
 
-/* phone */
+
 
 @media (max-width: 700px) {
 
@@ -1731,8 +1731,7 @@ html[dir="rtl"] .lamp-glow {
     }
 
     .certificate-card img {
-        width: 100%;
-        height: auto;
+        height:300px;
         max-height: 300px;
         padding: 6px;
         box-sizing: border-box;
