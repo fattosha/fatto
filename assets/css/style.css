@@ -1827,17 +1827,17 @@ html[dir="rtl"] #certificates a {
         height: 270px;
         min-height: 270px;
         padding: 5px;
+        box-sizing: border-box;
     }
 
     .certificate-card img {
         width: 100%;
         height: 100%;
         max-height: none;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
     }
 }
-
 /* certificates end */
 /* journey start */
 
