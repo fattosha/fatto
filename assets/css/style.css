@@ -1549,7 +1549,8 @@ html[dir="rtl"] .lamp-glow {
 
 
     
-    /* certificates start */
+    
+        /* certificates start */
 
 .certificates-section {
     width: 100%;
@@ -1633,14 +1634,8 @@ html[dir="rtl"] .lamp-glow {
     transition: transform .5s ease, filter .5s ease;
 }
 
-
-.certificate-card img:hover {
+.certificate-card:hover img {
     transform: scale(1.015);
-
-    box-shadow:
-        0 0 10px rgba(245, 228, 210, .5),
-        0 0 20px rgba(245, 228, 210, .2),
-        inset 0 0 7px rgba(245, 228, 210, .15);
 }
 
 .certificate-dots {
@@ -1676,6 +1671,29 @@ html[dir="rtl"] .lamp-glow {
 }
 
 
+/* tablet */
+
+@media (max-width: 950px) {
+
+    .certificates-section {
+        min-height: 430px;
+        padding: 50px 4%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .certificate-card {
+        height: 290px;
+        padding: 15px;
+    }
+
+    .certificates-header h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* phone */
 
 @media (max-width: 700px) {
 
@@ -1717,6 +1735,7 @@ html[dir="rtl"] .lamp-glow {
         height: auto;
         max-height: 300px;
         padding: 6px;
+        box-sizing: border-box;
         object-fit: contain;
 
         border: .03px solid var(--cream);
@@ -1724,9 +1743,16 @@ html[dir="rtl"] .lamp-glow {
         box-shadow:
             0 0 6px rgba(245, 228, 210, .28),
             inset 0 0 4px rgba(245, 228, 210, .08);
+
+        transition:
+            transform .5s ease,
+            filter .5s ease,
+            box-shadow .5s ease;
     }
 
-    .certificate-card img:hover {
+    .certificate-card:hover img {
+        transform: scale(1.015);
+
         box-shadow:
             0 0 9px rgba(245, 228, 210, .45),
             0 0 16px rgba(245, 228, 210, .18),
@@ -1751,6 +1777,9 @@ html[dir="rtl"] .lamp-glow {
     }
 }
 
+
+/* rtl */
+
 html[dir="rtl"] #certificates {
     direction: ltr !important;
     text-align: left !important;
@@ -1772,6 +1801,7 @@ html[dir="rtl"] #certificates span,
 html[dir="rtl"] #certificates a {
     text-align: left !important;
 }
+
 
 /* certificates end */
 /* journey start */
