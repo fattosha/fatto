@@ -1552,6 +1552,35 @@ html[dir="rtl"] .lamp-glow {
     
         /* certificates start */
 
+    
+
+    .certificates-header {
+        margin-bottom: 25px;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .certificates-header h2 {
+        font-size: 26px;
+    }
+
+    .view-certificates {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .view-certificates span {
+        font-size: 16px;
+    }
+
+    .certificate-card {
+        height: auto;
+        min-height: 240px;
+        padding: 5px;
+        flex-direction: column;
+    }
+
+    .certificate-card img {
 .certificates-section {
     width: 100%;
     min-height: 500px;
@@ -1627,7 +1656,7 @@ html[dir="rtl"] .lamp-glow {
 
 .certificate-card img {
     width: 100%;
-    height: 100%;
+    height: 304px;
     display: block;
     object-fit: contain;
     object-position: center;
@@ -1654,10 +1683,7 @@ html[dir="rtl"] .lamp-glow {
     border-radius: 50%;
     background: rgba(245, 228, 210, .45);
     cursor: pointer;
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        box-shadow .3s ease;
+    transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
 }
 
 .certificate-dots .dot.active {
@@ -1670,10 +1696,11 @@ html[dir="rtl"] .lamp-glow {
     transform: scale(1.3);
 }
 
+.certificate-badge {
+    display: none;
+}
 
-
-
-@media (max-width: 950px) {
+@media (max-width:950px) {
 
     .certificates-section {
         min-height: 430px;
@@ -1687,15 +1714,16 @@ html[dir="rtl"] .lamp-glow {
         padding: 15px;
     }
 
+    .certificate-card img {
+        height: 260px;
+    }
+
     .certificates-header h2 {
         font-size: 28px;
     }
 }
 
-
-
-
-@media (max-width: 700px) {
+@media (max-width:700px) {
 
     .certificates-section {
         min-height: auto;
@@ -1724,25 +1752,26 @@ html[dir="rtl"] .lamp-glow {
     }
 
     .certificate-card {
-        height: auto;
-        min-height: 240px;
+        height: 270px;
+        min-height: 270px;
         padding: 5px;
+        box-sizing: border-box;
         flex-direction: column;
+        overflow: visible;
     }
 
     .certificate-card img {
-        height:100%;
-        max-height: 290px;
+        width: 100%;
+        height: 250px;
+        max-height: 250px;
         padding: 6px;
         box-sizing: border-box;
-        object-fit: contain;
-
+        object-fit: cover;
+        object-position: center;
         border: .03px solid var(--cream);
-
         box-shadow:
             0 0 6px rgba(245, 228, 210, .28),
             inset 0 0 4px rgba(245, 228, 210, .08);
-
         transition:
             transform .5s ease,
             filter .5s ease,
@@ -1751,7 +1780,6 @@ html[dir="rtl"] .lamp-glow {
 
     .certificate-card:hover img {
         transform: scale(1.015);
-
         box-shadow:
             0 0 9px rgba(245, 228, 210, .45),
             0 0 16px rgba(245, 228, 210, .18),
@@ -1774,7 +1802,8 @@ html[dir="rtl"] .lamp-glow {
         width: 8px;
         height: 8px;
     }
-        .certificate-badge {
+
+    .certificate-badge {
         display: block;
         position: absolute;
         top: 4px;
@@ -1791,15 +1820,7 @@ html[dir="rtl"] .lamp-glow {
         height: 100%;
         display: block;
     }
-    
-    
 }
-.certificate-badge {
-    display: none;
-}
-
-
-/* rtl */
 
 html[dir="rtl"] #certificates {
     direction: ltr !important;
@@ -1821,22 +1842,6 @@ html[dir="rtl"] #certificates p,
 html[dir="rtl"] #certificates span,
 html[dir="rtl"] #certificates a {
     text-align: left !important;
-}
-@media (max-width:700px) {
-    .certificate-card {
-        height: 270px;
-        min-height: 270px;
-        padding: 5px;
-        box-sizing: border-box;
-    }
-
-    .certificate-card img {
-        width: 100%;
-        height: 100%;
-        max-height: none;
-        object-fit: cover;
-        object-position: center;
-    }
 }
 /* certificates end */
 /* journey start */
