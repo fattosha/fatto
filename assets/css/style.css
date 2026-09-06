@@ -3518,58 +3518,18 @@ body {
         justify-content: center;
     }
 
-    .certificate-card::before {
-        content: "";
-        position: absolute;
-        width: 400px;
-        height: 300px;
-        max-width: calc(100% - 10px);
-        background: #f5e4d2;
-        clip-path: polygon(
-            4% 0,
-            96% 0,
-            100% 8%,
-            100% 92%,
-            96% 100%,
-            4% 100%,
-            0 92%,
-            0 8%
-        );
-        box-shadow:
-            0 6px 16px rgba(0, 0, 0, .4);
-        z-index: 0;
-    }
-
-    .certificate-card::after {
-        content: "";
-        position: absolute;
-        width: calc(400px - 14px);
-        height: calc(300px - 14px);
-        max-width: calc(100% - 24px);
-        background: #d8c7b8;
-        clip-path: polygon(
-            4% 0,
-            96% 0,
-            100% 8%,
-            100% 92%,
-            96% 100%,
-            4% 100%,
-            0 92%,
-            0 8%
-        );
-        z-index: 0;
-    }
-
     .certificate-card img {
         position: relative;
         z-index: 1;
         width: 400px;
         height: 300px;
-        max-width: calc(100% - 24px);
+        max-width: calc(100% - 10px);
         padding: 5px;
         box-sizing: border-box;
         object-fit: contain;
         object-position: center;
+
+        background: #d8c7b8;
 
         border: 4px solid #b99b82;
 
@@ -3586,7 +3546,7 @@ body {
 
         box-shadow:
             inset 0 0 0 2px #f5e4d2,
-            0 3px 10px rgba(0, 0, 0, .25);
+            0 6px 16px rgba(0, 0, 0, .4);
 
         transition: transform .5s ease, filter .5s ease;
     }
