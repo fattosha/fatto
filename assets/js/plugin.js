@@ -77,23 +77,7 @@ function type() {
 type();
 const aboutSection = document.querySelector(".fattosh-about");
 
-if (aboutSection) {
-    const aboutObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    aboutSection.classList.add("about-ignite");
-                    observer.unobserve(aboutSection);
-                }
-            });
-        },
-        {
-            threshold: 0.35
-        }
-    );
 
-    aboutObserver.observe(aboutSection);
-}
 
 const fattoshFlip = document.getElementById("fattoshFlip");
 
@@ -485,4 +469,21 @@ document.getElementById("lang-ar").addEventListener("click", () => {
 const customTranslations = {
     "Nickname:": "الاسم المستعار:",
     "CIS": "الحاسبات و المعلومات",
+}
+if (aboutSection) {
+    const aboutObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    aboutSection.classList.add("about-ignite");
+                    observer.unobserve(aboutSection);
+                }
+            });
+        },
+        {
+            threshold: 0.35
+        }
+    );
+
+    aboutObserver.observe(aboutSection);
 }
