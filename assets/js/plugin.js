@@ -73,7 +73,27 @@ function type() {
     }
 }
 
+
 type();
+const aboutSection = document.querySelector(".fattosh-about");
+
+if (aboutSection) {
+    const aboutObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    aboutSection.classList.add("about-ignite");
+                    observer.unobserve(aboutSection);
+                }
+            });
+        },
+        {
+            threshold: 0.35
+        }
+    );
+
+    aboutObserver.observe(aboutSection);
+}
 
 const fattoshFlip = document.getElementById("fattoshFlip");
 
