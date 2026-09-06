@@ -1020,14 +1020,14 @@ html[dir="rtl"] .lamp-glow {
             inset 0 0 2px rgba(245, 228, 210, .08);
     }
 
-    25% {
+    20% {
         opacity: .35;
         box-shadow:
             0 0 5px rgba(245, 228, 210, .3),
             inset 0 0 5px rgba(245, 228, 210, .15);
     }
 
-    45% {
+    40% {
         opacity: .8;
         box-shadow:
             0 0 12px rgba(245, 228, 210, .7),
@@ -1035,7 +1035,7 @@ html[dir="rtl"] .lamp-glow {
             inset 0 0 10px rgba(245, 228, 210, .35);
     }
 
-    52% {
+    50% {
         opacity: 1;
         box-shadow:
             0 0 18px rgba(245, 228, 210, 1),
@@ -1044,25 +1044,29 @@ html[dir="rtl"] .lamp-glow {
     }
 
     62% {
-        opacity: .7;
+        opacity: .85;
         box-shadow:
-            0 0 10px rgba(245, 228, 210, .65),
-            inset 0 0 7px rgba(245, 228, 210, .25);
+            0 0 13px rgba(245, 228, 210, .8),
+            0 0 25px rgba(245, 228, 210, .4),
+            inset 0 0 9px rgba(245, 228, 210, .3);
     }
 
-    78% {
-        opacity: .35;
+    75% {
+        opacity: .65;
         box-shadow:
-            0 0 5px rgba(245, 228, 210, .3),
-            inset 0 0 3px rgba(245, 228, 210, .12);
+            0 0 9px rgba(245, 228, 210, .6),
+            0 0 18px rgba(245, 228, 210, .3),
+            inset 0 0 6px rgba(245, 228, 210, .2);
     }
 
     100% {
-        opacity: 0;
+        opacity: .75;
         box-shadow:
-            0 0 0 rgba(245, 228, 210, 0),
-            inset 0 0 0 rgba(245, 228, 210, 0);
+            0 0 7px rgba(245, 228, 210, .5),
+            0 0 14px rgba(245, 228, 210, .22),
+            inset 0 0 5px rgba(245, 228, 210, .15);
     }
+}
 }
 /* end of about */
 
