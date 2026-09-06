@@ -9,6 +9,18 @@
     
     
 }
+/* selection start*/
+::selection {
+  background-color: #8b0000;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #8b0000;
+  color: #ffffff;
+}
+
+/* selection end*/
 
 
 /* scrollbar */
