@@ -54,6 +54,9 @@ body {
     color-scheme: light only;
 }
 
+section {
+    scroll-margin-top: -20px;
+}
 /* scrollbar ending */
 .language-switcher {
     display: flex;
