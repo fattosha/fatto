@@ -55,7 +55,7 @@ body {
 }
 
 section {
-    scroll-margin-top: 70px;
+    scroll-margin-top: 90px;
 }
 /* scrollbar ending */
 .language-switcher {
@@ -703,6 +703,7 @@ html[dir="rtl"] .lamp-glow {
     background: #7f0508;
     color: #f5e4d2;
     overflow: hidden;
+    scroll-margin-top: 120px;
 }
 
 .fattosh-about-box {
