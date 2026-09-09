@@ -1282,7 +1282,7 @@ html[dir="rtl"] .lamp-glow {
 .tools-section {
     width: 100%;
     margin-top: 5px;
-    margin-bottom: 55px;
+    margin-bottom: 0px;
     position: relative;
 }
 
@@ -1489,6 +1489,12 @@ body {
     position: relative;
     z-index: 5;
     margin-top: 0;
+}
+@media (min-width: 701px) {
+    .tools-section::before,
+    .tools-section::after {
+        height: 287%;
+    }
 }
 /* project starts */
 
