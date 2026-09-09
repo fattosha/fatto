@@ -1533,7 +1533,12 @@ body {
     .tools-section::after {
         height: 247%;
     }
-}
+    
+@media (min-width: 901px)
+{.tools-section{
+        margin-top:40px}
+}}
+
 /* project starts */
 
 .featured-project {
