@@ -1400,58 +1400,8 @@ html[dir="rtl"] .lamp-glow {
         font-size: 11px;
     }
 }
-.tools-section {
-    position: relative;
-    overflow: hidden;
-}
 
-.tools-content {
-    position: relative;
-    z-index: 5;
-}
 
-.tools-section {
-position: relative;
-overflow: hidden;
-}
-
-.tools-content {
-position: relative;
-z-index: 10;
-}
-
-.tools-section::before {
-content: "";
-position: absolute;
-right: -8%;
-top: -90%;
-width: 70%;
-height: 190%;
-z-index: 3;
-pointer-events: none;
-transform: rotate(-3deg);
-
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700' preserveAspectRatio='none'%3E%3Cpath fill='rgba(45,5,10,0.45)' d='M0 360 C180 270 300 450 480 350 C650 250 780 390 930 280 C1050 195 1130 240 1200 190 L1200 700 L0 700Z'/%3E%3Cpath fill='rgba(90,6,13,0.65)' d='M0 420 C170 300 310 480 490 370 C650 270 790 430 940 300 C1060 205 1130 270 1200 210 L1200 700 L0 700Z'/%3E%3Cpath fill='rgba(135,9,16,0.7)' d='M0 480 C170 350 300 510 470 410 C650 310 790 460 930 340 C1050 250 1130 310 1200 250 L1200 700 L0 700Z'/%3E%3C/svg%3E");  
-
-background-size: 100% 100%;  
-background-repeat: no-repeat;  
-
-animation: waterFlow 7s ease-in-out infinite alternate;
-
-}
-
-.tools-section::after {
-content: "";
-position: absolute;
-right: -5%;
-top: -80%;
-width: 65%;
-height: 180%;
-z-index: 4;
-pointer-events: none;
-
-background:  
-    radial-gradient(  
 .tools-section {
     position: relative;
     overflow: hidden;
