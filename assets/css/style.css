@@ -1410,77 +1410,88 @@ html[dir="rtl"] .lamp-glow {
     z-index: 5;
 }
 
-.tools-water {
-    position: absolute;
-    right: -5%;
-    bottom: -8%;
-    width: 48%;
-    height: 72%;
-    z-index: 2;
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            ellipse at 35% 15%,
-            rgba(170, 12, 18, 0.35) 0%,
-            transparent 55%
-        ),
-        linear-gradient(
-            160deg,
-            rgba(25, 7, 11, 0.2),
-            rgba(75, 5, 12, 0.82)
-        );
-
-    clip-path: polygon(
-        20% 12%,
-        28% 8%,
-        37% 11%,
-        46% 7%,
-        55% 13%,
-        64% 9%,
-        73% 15%,
-        84% 10%,
-        100% 17%,
-        100% 100%,
-        0% 100%,
-        0% 20%,
-        8% 17%
-    );
-
-    transform: rotate(-2deg);
+.tools-section {
+position: relative;
+overflow: hidden;
 }
 
-.tools-water::before {
-    content: "";
-    position: absolute;
-    top: 7%;
-    left: -5%;
-    width: 110%;
-    height: 35px;
-
-    border-top: 3px solid rgba(205, 35, 40, 0.45);
-    border-radius: 50%;
-
-    transform: rotate(-2deg);
+.tools-content {
+position: relative;
+z-index: 10;
 }
 
-.tools-water::after {
-    content: "";
-    position: absolute;
-    top: 13%;
-    left: 5%;
-    width: 85%;
-    height: 80%;
+.tools-section::before {
+content: "";
+position: absolute;
+right: -8%;
+top: -90%;
+width: 70%;
+height: 190%;
+z-index: 3;
+pointer-events: none;
+transform: rotate(-3deg);
 
-    background:
-        linear-gradient(
-            110deg,
-            transparent 0%,
-            rgba(255, 255, 255, 0.025) 45%,
-            transparent 55%
-        );
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700' preserveAspectRatio='none'%3E%3Cpath fill='rgba(45,5,10,0.45)' d='M0 360 C180 270 300 450 480 350 C650 250 780 390 930 280 C1050 195 1130 240 1200 190 L1200 700 L0 700Z'/%3E%3Cpath fill='rgba(90,6,13,0.65)' d='M0 420 C170 300 310 480 490 370 C650 270 790 430 940 300 C1060 205 1130 270 1200 210 L1200 700 L0 700Z'/%3E%3Cpath fill='rgba(135,9,16,0.7)' d='M0 480 C170 350 300 510 470 410 C650 310 790 460 930 340 C1050 250 1130 310 1200 250 L1200 700 L0 700Z'/%3E%3C/svg%3E");  
 
-    opacity: 0.7;
+background-size: 100% 100%;  
+background-repeat: no-repeat;  
+
+animation: waterFlow 7s ease-in-out infinite alternate;
+
+}
+
+.tools-section::after {
+content: "";
+position: absolute;
+right: -5%;
+top: -80%;
+width: 65%;
+height: 180%;
+z-index: 4;
+pointer-events: none;
+
+background:  
+    radial-gradient(  
+        ellipse at 40% 35%,  
+        rgba(220, 35, 40, 0.14),  
+        transparent 50%  
+    );  
+
+animation: waterGlow 5s ease-in-out infinite alternate;
+
+}
+
+@keyframes waterFlow {
+0% {
+transform: translateX(0) rotate(-3deg);
+}
+
+50% {  
+    transform: translateX(-35px) rotate(-1deg);  
+}  
+
+100% {  
+    transform: translateX(30px) rotate(-4deg);  
+}
+
+}
+
+@keyframes waterGlow {
+0% {
+transform: translateX(0);
+opacity: 0.5;
+}
+
+100% {  
+    transform: translateX(-40px);  
+    opacity: 1;  
+}
+
+}
+
+.your-illustration-class {
+position: relative;
+z-index: 5;
 }
 /* project starts */
 
