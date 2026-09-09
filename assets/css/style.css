@@ -1189,7 +1189,7 @@ html[dir="rtl"] .lamp-glow {
         transform: translateX(8%) translateY(29px);
     }
     50% {
-        transform: translateX(4%) translateY(-6px);
+        transform: translateX(4%) translateY(8px);
     }
     100% {
         transform: translateX(8%) translateY(29px);
@@ -1434,7 +1434,7 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
-    animation: oceanMove 9s ease-in-out infinite;
+    animation: oceanBack 8s ease-in-out infinite alternate;
 }
 
 .tools-section::after {
@@ -1452,50 +1452,39 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
-    animation: oceanFront 6s ease-in-out infinite;
+    animation: oceanLight 8s ease-in-out infinite alternate;
 }
 
-@keyframes oceanMove {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
 
-    25% {
-        transform: translate3d(-10px, -3px, 0);
+
+@keyframes oceanBack {
+    0% {
+        transform: translate3d(-14px, -3px, 0);
     }
 
     50% {
-        transform: translate3d(7px, 4px, 0);
-    }
-
-    75% {
-        transform: translate3d(-6px, 2px, 0);
+        transform: translate3d(8px, 3px, 0);
     }
 
     100% {
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(-14px, -3px, 0);
     }
 }
 
-@keyframes oceanFront {
+@keyframes oceanLight {
     0% {
-        transform: translate3d(8px, 0, 0);
-        opacity: .72;
+        transform: translate3d(14px, 3px, 0);
+        opacity: .7;
     }
 
-    30% {
-        transform: translate3d(-5px, -4px, 0);
+    50% {
+        transform: translate3d(-8px, -3px, 0);
         opacity: .9;
     }
 
-    60% {
-        transform: translate3d(10px, 3px, 0);
-        opacity: .8;
-    }
-
     100% {
-        transform: translate3d(-8px, -2px, 0);
-        opacity: 1;
+        transform: translate3d(14px, 3px, 0);
+        opacity: .7;
     }
 }
 
