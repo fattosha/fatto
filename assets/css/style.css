@@ -3737,3 +3737,6 @@ html[dir="rtl"] .project-info {
         gap: 5px;
     }
 }
+section {
+    overflow: hidden;
+}
