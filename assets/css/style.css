@@ -1087,7 +1087,7 @@ html[dir="rtl"] .lamp-glow {
     position: relative;
     overflow: hidden;
     margin-top: 55px;
-    margin-bottom: 55px;
+    margin-bottom: 25px;
 }
 
 .skills-section .skills-content {
