@@ -1085,7 +1085,7 @@ html[dir="rtl"] .lamp-glow {
     grid-template-columns: 60% 40%;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     margin-top: 55px;
     margin-bottom: 25px;
 }
@@ -1162,7 +1162,7 @@ html[dir="rtl"] .lamp-glow {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    overflow: hidden;
+    overflow: visible;
     z-index: 1;
 }
 
@@ -1233,6 +1233,7 @@ html[dir="rtl"] .lamp-glow {
         align-items: stretch;
         margin-top: 35px;
         margin-bottom: 35px;
+        overflow: hidden;
     }
     .skills-section .skills-content {
         width: 100%;
@@ -1247,7 +1248,7 @@ html[dir="rtl"] .lamp-glow {
 .skills-section .skills-art {
         height: 420px;
         margin-top: 10px;
-        overflow: visible;
+        
         justify-content: center;
     }
 
