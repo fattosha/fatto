@@ -1274,44 +1274,127 @@ html[dir="rtl"] .lamp-glow {
 /* SKILLS END */
 
 
+/* TOOLS & TECHNOLOGIES */
+
 .tools-section {
-    margin-top: 30px;
-    margin-bottom: 35px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 55px;
+    position: relative;
 }
 
-.tools-section .skills-list {
+.tools-content {
+    width: 100%;
+    padding-left: 65px;
+}
+
+.tools-title {
+    margin: 0 0 30px;
+    color: #f5e4d2;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.tools-list {
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
     gap: 32px;
 }
 
-.tools-section .skill {
+.tool {
     width: 70px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
 }
 
-.tools-section .skill-icon {
+.tool-icon {
     width: 55px;
     height: 55px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    color: #f5e4d2;
+    font-size: 42px;
+    transition: transform .35s ease, filter .35s ease;
 }
 
+.tool:hover .tool-icon {
+    transform: translateY(-7px) scale(1.12);
+    filter: drop-shadow(0 0 8px rgba(245, 228, 210, .55));
+}
+
+.tool span {
+    color: #f5e4d2;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+
+@media (max-width: 950px) {
+
+    .tools-content {
+        padding-left: 35px;
+    }
+
+    .tools-list {
+        gap: 22px;
+    }
+
+    .tool {
+        width: 60px;
+    }
+
+    .tool-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 36px;
+    }
+
+    .tool span {
+        font-size: 10px;
+    }
+}
+
+
 @media (max-width: 650px) {
+
     .tools-section {
-        min-height: auto;
+        margin-top: 15px;
+        margin-bottom: 40px;
     }
 
-    .tools-section .skills-content {
-        padding: 35px 20px 20px;
+    .tools-content {
+        padding: 30px 20px 20px;
     }
 
-    .tools-section .skills-list {
+    .tools-title {
+        margin-bottom: 25px;
+        font-size: 26px;
+    }
+
+    .tools-list {
         justify-content: center;
-        gap: 25px;
+        gap: 28px;
+    }
+
+    .tool {
+        width: 65px;
+    }
+
+    .tool-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 36px;
+    }
+
+    .tool span {
+        font-size: 11px;
     }
 }
 /* project starts */
