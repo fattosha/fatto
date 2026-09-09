@@ -487,3 +487,199 @@ if (aboutSection) {
 
     aboutObserver.observe(aboutSection);
 }
+const sushiBoard = document.getElementById("sushi-board");
+const sushi = document.getElementById("sushi-player");
+const paddle = document.getElementById("sushi-paddle");
+const scoreElement = document.getElementById("sushi-score");
+const livesElement = document.getElementById("sushi-lives");
+const gameOverScreen = document.getElementById("sushi-game-over");
+const restartButton = document.getElementById("sushi-restart");
+
+let score = 0;
+let lives = 3;
+let gameRunning = true;
+
+let sushiX = 0;
+let sushiY = 80;
+
+let velocityX = 3;
+let velocityY = 3;
+
+let paddleX = 0;
+let animationFrame;
+
+const sushiSize = 42;
+
+function resetGame() {
+    const boardWidth = sushiBoard.clientWidth;
+
+    score = 0;
+    lives = 3;
+    gameRunning = true;
+
+    scoreElement.textContent = score;
+    livesElement.textContent = lives;
+
+    sushiX = boardWidth / 2 - sushiSize / 2;
+    sushiY = 80;
+
+    velocityX = Math.random() > 0.5 ? 3 : -3;
+    velocityY = 3;
+
+    paddleX = boardWidth / 2 - paddle.offsetWidth / 2;
+    paddle.style.left = `${paddleX}px`;
+    paddle.style.transform = "none";
+
+    sushi.style.left = `${sushiX}px`;
+    sushi.style.top = `${sushiY}px`;
+
+    gameOverScreen.classList.remove("show");
+
+    cancelAnimationFrame(animationFrame);
+    gameLoop();
+}
+
+function gameLoop() {
+    if (!gameRunning) return;
+
+    const boardWidth = sushiBoard.clientWidth;
+    const boardHeight = sushiBoard.clientHeight;
+    const paddleWidth = paddle.offsetWidth;
+
+    sushiX += velocityX;
+    sushiY += velocityY;
+
+    if (sushiX <= 0) {
+        sushiX = 0;
+        velocityX *= -1;
+    }
+
+    if (sushiX + sushiSize >= boardWidth) {
+        sushiX = boardWidth - sushiSize;
+        velocityX *= -1;
+    }
+
+    if (sushiY <= 0) {
+        sushiY = 0;
+        velocityY *= -1;
+    }
+
+    const paddleTop = boardHeight - 22 - paddle.offsetHeight;
+
+    const sushiBottom = sushiY + sushiSize;
+    const sushiCenterX = sushiX + sushiSize / 2;
+
+    if (
+        velocityY > 0 &&
+        sushiBottom >= paddleTop &&
+        sushiY <= paddleTop + paddle.offsetHeight &&
+        sushiCenterX >= paddleX &&
+        sushiCenterX <= paddleX + paddleWidth
+    ) {
+        sushiY = paddleTop - sushiSize;
+        velocityY *= -1;
+
+        score++;
+        scoreElement.textContent = score;
+
+        const speed = 3 + Math.min(score * 0.08, 3);
+
+        velocityX = velocityX > 0 ? speed : -speed;
+        velocityY = -Math.abs(velocityY);
+
+        if (Math.abs(velocityY) < speed) {
+            velocityY = -speed;
+        }
+    }
+
+    if (sushiY > boardHeight) {
+        lives--;
+        livesElement.textContent = lives;
+
+        if (lives <= 0) {
+            endGame();
+            return;
+        }
+
+        sushiX = boardWidth / 2 - sushiSize / 2;
+        sushiY = 80;
+
+        velocityX = Math.random() > 0.5 ? 3 : -3;
+        velocityY = 3;
+    }
+
+    sushi.style.left = `${sushiX}px`;
+    sushi.style.top = `${sushiY}px`;
+
+    animationFrame = requestAnimationFrame(gameLoop);
+}
+
+function movePaddle(clientX) {
+    const rect = sushiBoard.getBoundingClientRect();
+    const paddleWidth = paddle.offsetWidth;
+
+    paddleX = clientX - rect.left - paddleWidth / 2;
+
+    const maxX = sushiBoard.clientWidth - paddleWidth;
+
+    paddleX = Math.max(0, Math.min(paddleX, maxX));
+
+    paddle.style.left = `${paddleX}px`;
+}
+
+document.addEventListener("keydown", function (event) {
+    if (!gameRunning) return;
+
+    const step = 35;
+
+    if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        movePaddle(
+            sushiBoard.getBoundingClientRect().left +
+            paddleX +
+            paddle.offsetWidth / 2 -
+            step
+        );
+    }
+
+    if (event.key === "ArrowRight") {
+        event.preventDefault();
+        movePaddle(
+            sushiBoard.getBoundingClientRect().left +
+            paddleX +
+            paddle.offsetWidth / 2 +
+            step
+        );
+    }
+});
+
+sushiBoard.addEventListener("pointermove", function (event) {
+    if (event.pointerType === "touch" || event.pointerType === "mouse") {
+        movePaddle(event.clientX);
+    }
+});
+
+sushiBoard.addEventListener("touchmove", function (event) {
+    event.preventDefault();
+
+    if (event.touches.length > 0) {
+        movePaddle(event.touches[0].clientX);
+    }
+}, { passive: false });
+
+function endGame() {
+    gameRunning = false;
+    cancelAnimationFrame(animationFrame);
+    gameOverScreen.classList.add("show");
+}
+
+restartButton.addEventListener("click", resetGame);
+
+window.addEventListener("resize", function () {
+    const maxX = sushiBoard.clientWidth - paddle.offsetWidth;
+
+    paddleX = Math.max(0, Math.min(paddleX, maxX));
+    paddle.style.left = `${paddleX}px`;
+});
+
+resetGame();
