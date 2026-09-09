@@ -1274,6 +1274,46 @@ html[dir="rtl"] .lamp-glow {
 /* SKILLS END */
 
 
+.tools-section {
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+.tools-section .skills-list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.tools-section .skill {
+    width: 70px;
+    flex-shrink: 0;
+}
+
+.tools-section .skill-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 650px) {
+    .tools-section {
+        min-height: auto;
+    }
+
+    .tools-section .skills-content {
+        padding: 35px 20px 20px;
+    }
+
+    .tools-section .skills-list {
+        justify-content: center;
+        gap: 25px;
+    }
+}
 /* project starts */
 
 .featured-project {
