@@ -1187,7 +1187,7 @@ html[dir="rtl"] .lamp-glow {
         transform: translateX(8%) translateY(4px);
     }
     50% {
-        transform: translateX(4%) translateY(-6px);
+        transform: translateX(4%) translateY(-26px);
     }
     100% {
         transform: translateX(8%) translateY(4px);
