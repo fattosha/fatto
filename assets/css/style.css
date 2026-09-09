@@ -1289,6 +1289,7 @@ html[dir="rtl"] .lamp-glow {
 .tools-content {
     width: 100%;
     padding-left: 65px;
+    padding-bottom:20px;
 }
 
 .tools-title {
@@ -1493,7 +1494,7 @@ body {
 @media (min-width: 701px) {
     .tools-section::before,
     .tools-section::after {
-        height: 287%;
+        height: 247%;
     }
 }
 /* project starts */
