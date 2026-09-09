@@ -1184,13 +1184,13 @@ html[dir="rtl"] .lamp-glow {
 
 @keyframes skillsFloat {
     0% {
-        transform: translateX(8%) translateY(4px);
+        transform: translateX(8%) translateY(24px);
     }
     50% {
-        transform: translateX(4%) translateY(-26px);
+        transform: translateX(4%) translateY(-16px);
     }
     100% {
-        transform: translateX(8%) translateY(4px);
+        transform: translateX(8%) translateY(24px);
     }
 }
 
