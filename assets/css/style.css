@@ -1157,7 +1157,7 @@ html[dir="rtl"] .lamp-glow {
 
 .skills-section .skills-art {
     width: 100%;
-    height: 100%;
+    height: 120%;
     position: relative;
     display: flex;
     align-items: center;
@@ -1184,13 +1184,13 @@ html[dir="rtl"] .lamp-glow {
 
 @keyframes skillsFloat {
     0% {
-        transform: translateX(8%) translateY(24px);
+        transform: translateX(8%) translateY(29px);
     }
     50% {
-        transform: translateX(4%) translateY(-16px);
+        transform: translateX(4%) translateY(-6px);
     }
     100% {
-        transform: translateX(8%) translateY(24px);
+        transform: translateX(8%) translateY(29px);
     }
 }
 
