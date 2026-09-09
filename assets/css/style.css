@@ -1090,7 +1090,7 @@ html[dir="rtl"] .lamp-glow {
     margin-top: 55px;
     margin-bottom: 25px;
     
-    clip-path: inset(-105% 0 0 0);
+    clip-path: inset(0 0 -105% 0);
 }
 
 .skills-section .skills-content {
@@ -1167,7 +1167,9 @@ html[dir="rtl"] .lamp-glow {
     justify-content: flex-end;
     overflow-y: visible;
     overflow-x: hidden;
-    z-index: 1;
+    z-index: 10;
+
+    clip-path: inset(0 0 -105% 0);
 }
 
 .skills-section .skills-art img {
