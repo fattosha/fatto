@@ -1085,7 +1085,8 @@ html[dir="rtl"] .lamp-glow {
     grid-template-columns: 60% 40%;
     align-items: center;
     position: relative;
-    overflow: visible;
+    overflow-y: visible;
+    overflow-x: hidden;
     margin-top: 55px;
     margin-bottom: 25px;
 }
@@ -1162,7 +1163,8 @@ html[dir="rtl"] .lamp-glow {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    overflow: visible;
+    overflow-y: visible;
+    overflow-x: hidden;
     z-index: 1;
 }
 
