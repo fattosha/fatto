@@ -156,186 +156,125 @@ journeyItems.forEach((item, index) => {
   });
 });
 
-    document.addEventListener("DOMContentLoaded", function () {
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
+    // Contact Form
+let form = document.getElementById("contactForm");
+let successMessage = document.querySelector(".success-message");
 
-  const form = document.getElementById("contactForm");
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // no reload
 
-  if (!form) {
-    console.error("Contact form not found.");
-    return;
-  }
+        let nameInput = document.getElementById("name");
+        let emailInput = document.getElementById("email");
+        let subjectInput = document.getElementById("subject");
+        let messageInput = document.getElementById("message");
+        let sendButton = form.querySelector(".send-button");
 
-  const nameInput = document.getElementById("name");
-  const emailInput = document.getElementById("email");
-  const subjectInput = document.getElementById("subject");
-  const messageInput = document.getElementById("message");
-  const successMessage = form.querySelector(".success-message");
-  const sendButton = form.querySelector(".send-button");
+        let name = nameInput.value.trim();
+        let email = emailInput.value.trim();
+        let subject = subjectInput.value.trim();
+        let message = messageInput.value.trim();
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+        let isNameValid = /^[A-Za-z\u0600-\u06FF\s]{3,30}$/.test(name);
+        let isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+        let isSubjectValid = subject.length >= 3;
+        let isMessageValid = message.length >= 10 && message.length <= 500;
 
-    let isValid = true;
+        // Clear previous errors
+        form.querySelectorAll(".error-message").forEach(function (error) {
+            error.textContent = "";
+        });
 
-    clearErrors();
-
-    if (nameInput.value.trim() === "") {
-      showError(nameInput, "Name is required.");
-      isValid = false;
-    } else if (
-      !/^[A-Za-z\u0600-\u06FF\s]{3,30}$/.test(nameInput.value.trim())
-    ) {
-      showError(
-        nameInput,
-        "Name must contain only letters and be 3-30 characters."
-      );
-      isValid = false;
-    }
-
-    if (emailInput.value.trim() === "") {
-      showError(emailInput, "Email is required.");
-      isValid = false;
-    } else if (
-      !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailInput.value.trim())
-    ) {
-      showError(emailInput, "Please enter a valid email address.");
-      isValid = false;
-    }
-
-    if (subjectInput.value.trim() === "") {
-      showError(subjectInput, "Subject is required.");
-      isValid = false;
-    } else if (subjectInput.value.trim().length < 3) {
-      showError(subjectInput, "Subject must be at least 3 characters.");
-      isValid = false;
-    }
-
-    if (messageInput.value.trim() === "") {
-      showError(messageInput, "Please leave a message.");
-      isValid = false;
-    } else if (messageInput.value.trim().length < 10) {
-      showError(messageInput, "Message must be at least 10 characters.");
-      isValid = false;
-    } else if (messageInput.value.trim().length > 500) {
-      showError(messageInput, "Message cannot exceed 500 characters.");
-      isValid = false;
-    }
-
-    if (!isValid) {
-      return;
-    }
-
-    sendButton.disabled = true;
-    sendButton.innerHTML = "<span>SENDING...</span><b>↗</b>";
-
-fetch("https://formsubmit.co/ajax/mnhk32134@gmail.com", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json"
-  },
-  body: JSON.stringify({
-    name: nameInput.value.trim(),
-    email: emailInput.value.trim(),
-    subject: subjectInput.value.trim(),
-    message: messageInput.value.trim()
-  })
-})
-  .then(async function (response) {
-    const data = await response.json();
-
-    // Only show success if FormSubmit actually accepted the request
-    if (!response.ok || data.success === false) {
-      throw new Error(data.message || "Something went wrong.");
-    }
-
-    if (successMessage) {
-      successMessage.innerHTML =
-        "<span>✦</span> Your message has been sent successfully.";
-
-      successMessage.classList.add("show");
-
-      setTimeout(function () {
-        successMessage.classList.remove("show");
-      }, 5000);
-    }
-
-    form.reset();
-  })
-  .catch(function (error) {
-    console.error("FormSubmit Error:", error);
-
-    if (successMessage) {
-      successMessage.innerHTML =
-        "<span>✦</span> Something went wrong. Please try again.";
-
-      successMessage.classList.add("show");
-
-      setTimeout(function () {
-        successMessage.classList.remove("show");
-      }, 5000);
-    }
-  })
-  .finally(function () {
-    sendButton.disabled = false;
-    sendButton.innerHTML = "<span>SEND IT</span><b>↗</b>";
-  });
-  });
-
-  function showError(input, message) {
-    if (!input) return;
-
-    input.classList.add("is-invalid");
-
-    const field = input.closest(".field");
-
-    if (!field) return;
-
-    field.classList.add("error");
-
-    const error = field.querySelector(".error-message");
-
-    if (error) {
-      error.textContent = message;
-    }
-  }
-
-  function clearErrors() {
-    form.querySelectorAll(".error-message").forEach(function (error) {
-      error.textContent = "";
-    });
-
-    form.querySelectorAll(".field").forEach(function (field) {
-      field.classList.remove("error");
-    });
-
-    form.querySelectorAll("input, textarea").forEach(function (input) {
-      input.classList.remove("is-invalid");
-    });
-  }
-
-  form.querySelectorAll("input, textarea").forEach(function (input) {
-    input.addEventListener("input", function () {
-      const field = this.closest(".field");
-
-      if (field) {
-        field.classList.remove("error");
-
-        const error = field.querySelector(".error-message");
-
-        if (error) {
-          error.textContent = "";
+        if (!isNameValid) {
+            nameInput.nextElementSibling.textContent =
+                "Name must contain only letters and be 3-30 characters.";
+            nameInput.focus();
+            return;
         }
-      }
 
-      this.classList.remove("is-invalid");
+        if (!isEmailValid) {
+            emailInput.nextElementSibling.textContent =
+                "Please enter a valid email address.";
+            emailInput.focus();
+            return;
+        }
+
+        if (!isSubjectValid) {
+            subjectInput.nextElementSibling.textContent =
+                "Subject must be at least 3 characters.";
+            subjectInput.focus();
+            return;
+        }
+
+        if (!isMessageValid) {
+            messageInput.nextElementSibling.textContent =
+                "Message must be between 10 and 500 characters.";
+            messageInput.focus();
+            return;
+        }
+
+        sendButton.disabled = true;
+        sendButton.innerHTML = "<span>SENDING...</span><b>↗</b>";
+
+        fetch("https://formsubmit.co/ajax/mnhk32134@gmail.com", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            })
+        })
+        .then(function (response) {
+            return response.json().then(function (data) {
+                if (!response.ok || data.success === false) {
+                    throw new Error(data.message || "Something went wrong.");
+                }
+
+                return data;
+            });
+        })
+        .then(function () {
+
+            if (successMessage) {
+                successMessage.innerHTML =
+                    "<span>✦</span> Your message has been sent successfully.";
+
+                successMessage.classList.add("show");
+
+                setTimeout(function () {
+                    successMessage.classList.remove("show");
+                }, 5000);
+            }
+
+            form.reset();
+        })
+        .catch(function (error) {
+
+            console.error("FormSubmit Error:", error);
+
+            if (successMessage) {
+                successMessage.innerHTML =
+                    "<span>✦</span> Something went wrong. Please try again.";
+
+                successMessage.classList.add("show");
+
+                setTimeout(function () {
+                    successMessage.classList.remove("show");
+                }, 5000);
+            }
+        })
+        .finally(function () {
+
+            sendButton.disabled = false;
+            sendButton.innerHTML = "<span>SEND IT</span><b>↗</b>";
+        });
     });
-  });
-});
+}
 
 const whatsappLink = document.querySelector('.footer-links a[href*="wa.me"]');
 
