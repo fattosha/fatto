@@ -232,57 +232,57 @@ journeyItems.forEach((item, index) => {
     sendButton.disabled = true;
     sendButton.innerHTML = "<span>SENDING...</span><b>↗</b>";
 
-    fetch("https://formsubmit.co/ajax/mnhk32134@gmail.com", {
-      method: "POST",
-      headers: {
+fetch("https://formsubmit.co/ajax/mnhk32134@gmail.com", {
+    method: "POST",
+    headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: JSON.stringify({
+        "Accept": "application/json"
+    },
+    body: JSON.stringify({
         name: nameInput.value.trim(),
         email: emailInput.value.trim(),
         subject: subjectInput.value.trim(),
         message: messageInput.value.trim()
-      })
     })
-      .then(async (response) => {
-        const data = await response.json();
+})
+.then(async (response) => {
+    const data = await response.json();
 
-        if (!response.ok || data.success !== true) {
-          throw new Error(
-            data.message || "Failed to send the message."
-          );
-        }
+    if (!response.ok || data.success === false) {
+        throw new Error(data.message || "Something went wrong.");
+    }
 
-        if (successMessage) {
-          successMessage.innerHTML =
+    if (successMessage) {
+        successMessage.innerHTML =
             "<span>✦</span> Your message has been sent successfully.";
-          successMessage.classList.add("show");
 
-          setTimeout(function () {
+        successMessage.classList.add("show");
+
+        setTimeout(function () {
             successMessage.classList.remove("show");
-          }, 5000);
-        }
+        }, 5000);
+    }
 
-        form.reset();
-      })
-      .catch((error) => {
-        console.error("Error sending message:", error);
+    form.reset();
+})
+.catch((error) => {
+    console.error("FormSubmit Error:", error);
 
-        if (successMessage) {
-          successMessage.innerHTML =
+    if (successMessage) {
+        successMessage.innerHTML =
             "<span>✦</span> Something went wrong. Please try again.";
-          successMessage.classList.add("show");
 
-          setTimeout(function () {
+        successMessage.classList.add("show");
+
+        setTimeout(function () {
             successMessage.classList.remove("show");
-          }, 5000);
-        }
-      })
-      .finally(() => {
-        sendButton.disabled = false;
-        sendButton.innerHTML = "<span>SEND IT</span><b>↗</b>";
-      });
+        }, 5000);
+    }
+})
+.finally(() => {
+    sendButton.disabled = false;
+    sendButton.innerHTML = "<span>SEND IT</span><b>↗</b>";
+});
   });
 
   function showError(input, message) {
