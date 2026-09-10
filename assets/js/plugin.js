@@ -233,56 +233,57 @@ journeyItems.forEach((item, index) => {
     sendButton.innerHTML = "<span>SENDING...</span><b>↗</b>";
 
 fetch("https://formsubmit.co/ajax/mnhk32134@gmail.com", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-    },
-    body: JSON.stringify({
-        name: nameInput.value.trim(),
-        email: emailInput.value.trim(),
-        subject: subjectInput.value.trim(),
-        message: messageInput.value.trim()
-    })
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+  },
+  body: JSON.stringify({
+    name: nameInput.value.trim(),
+    email: emailInput.value.trim(),
+    subject: subjectInput.value.trim(),
+    message: messageInput.value.trim()
+  })
 })
-.then(async (response) => {
+  .then(async function (response) {
     const data = await response.json();
 
+    // Only show success if FormSubmit actually accepted the request
     if (!response.ok || data.success === false) {
-        throw new Error(data.message || "Something went wrong.");
+      throw new Error(data.message || "Something went wrong.");
     }
 
     if (successMessage) {
-        successMessage.innerHTML =
-            "<span>✦</span> Your message has been sent successfully.";
+      successMessage.innerHTML =
+        "<span>✦</span> Your message has been sent successfully.";
 
-        successMessage.classList.add("show");
+      successMessage.classList.add("show");
 
-        setTimeout(function () {
-            successMessage.classList.remove("show");
-        }, 5000);
+      setTimeout(function () {
+        successMessage.classList.remove("show");
+      }, 5000);
     }
 
     form.reset();
-})
-.catch((error) => {
+  })
+  .catch(function (error) {
     console.error("FormSubmit Error:", error);
 
     if (successMessage) {
-        successMessage.innerHTML =
-            "<span>✦</span> Something went wrong. Please try again.";
+      successMessage.innerHTML =
+        "<span>✦</span> Something went wrong. Please try again.";
 
-        successMessage.classList.add("show");
+      successMessage.classList.add("show");
 
-        setTimeout(function () {
-            successMessage.classList.remove("show");
-        }, 5000);
+      setTimeout(function () {
+        successMessage.classList.remove("show");
+      }, 5000);
     }
-})
-.finally(() => {
+  })
+  .finally(function () {
     sendButton.disabled = false;
     sendButton.innerHTML = "<span>SEND IT</span><b>↗</b>";
-});
+  });
   });
 
   function showError(input, message) {
