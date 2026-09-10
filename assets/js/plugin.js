@@ -156,7 +156,7 @@ journeyItems.forEach((item, index) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
   AOS.init({
     duration: 1000,
     once: true
@@ -245,8 +245,15 @@ document.addEventListener("DOMContentLoaded", function () {
         message: messageInput.value.trim()
       })
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(async (response) => {
+        const data = await response.json();
+
+        if (!response.ok || data.success !== true) {
+          throw new Error(
+            data.message || "Failed to send the message."
+          );
+        }
+
         if (successMessage) {
           successMessage.innerHTML =
             "<span>✦</span> Your message has been sent successfully.";
@@ -256,10 +263,21 @@ document.addEventListener("DOMContentLoaded", function () {
             successMessage.classList.remove("show");
           }, 5000);
         }
+
         form.reset();
       })
       .catch((error) => {
         console.error("Error sending message:", error);
+
+        if (successMessage) {
+          successMessage.innerHTML =
+            "<span>✦</span> Something went wrong. Please try again.";
+          successMessage.classList.add("show");
+
+          setTimeout(function () {
+            successMessage.classList.remove("show");
+          }, 5000);
+        }
       })
       .finally(() => {
         sendButton.disabled = false;
@@ -294,12 +312,12 @@ document.addEventListener("DOMContentLoaded", function () {
       field.classList.remove("error");
     });
 
-    form.querySelectorAll("input,textarea").forEach(function (input) {
+    form.querySelectorAll("input, textarea").forEach(function (input) {
       input.classList.remove("is-invalid");
     });
   }
 
-  form.querySelectorAll("input,textarea").forEach(function (input) {
+  form.querySelectorAll("input, textarea").forEach(function (input) {
     input.addEventListener("input", function () {
       const field = this.closest(".field");
 
