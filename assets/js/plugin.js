@@ -343,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      const rect = service.getBoundingClientRect();
+   /*   const rect = service.getBoundingClientRect();
 
       const placeholder = document.createElement("div");
 
