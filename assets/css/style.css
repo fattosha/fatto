@@ -975,6 +975,7 @@ html[dir="rtl"] .lamp-glow {
         height: auto;
         display: flex;
         flex-direction: column;
+        background: transparent;
     }
     .fattosh-about-box {
         height: 640px;
