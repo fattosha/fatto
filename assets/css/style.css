@@ -972,12 +972,12 @@ html[dir="rtl"] .lamp-glow {
 
 @media (max-width: 599px) {
     .fattosh-about {
-        height: 1900px;
+        height: auto;
         display: flex;
         flex-direction: column;
     }
     .fattosh-about-box {
-        height: 550px;
+        height: 590px;
         min-height: 550px;
     }
     .fattosh-middle {
