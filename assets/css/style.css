@@ -972,7 +972,7 @@ html[dir="rtl"] .lamp-glow {
 
 @media (max-width: 599px) {
     .fattosh-about {
-        height: auto;
+        height: 900px;
         display: flex;
         flex-direction: column;
     }
